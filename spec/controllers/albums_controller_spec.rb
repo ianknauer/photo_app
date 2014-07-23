@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe AlbumsController do
   describe "GET new" do
     it "sets @album" do

@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.new(customer_params)
+    @customer = Customer.new(customer_params.merge!(user_id: current_user.id))
     if @customer.save
       flash[:notice] = "welcome to the party!"
       redirect_to root_path
