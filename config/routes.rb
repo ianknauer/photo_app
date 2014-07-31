@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :albums, only: [:new]
   resources :sessions, only: [:create, :new, :destroy]
   resources :customers, only: [:create, :new, :show]
+  resources :photos, only: [:create, :new, :show]
 end
