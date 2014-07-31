@@ -1,4 +1,4 @@
-class Photo < ActiveRecord::Base
+class Picture < ActiveRecord::Base
   belongs_to :album
   
   validates :name, presence: true
