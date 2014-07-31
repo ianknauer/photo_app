@@ -1,0 +1,5 @@
+class AddCustomerIdToAlbums < ActiveRecord::Migration
+  def change
+    add_column :albums, :customer_id, :integer
+  end
+end
