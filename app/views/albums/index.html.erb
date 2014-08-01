@@ -1,1 +1,17 @@
-<h1> Hello World </h1>
+<article class="video_category">
+  <% @albums.each do |album| %>
+    <h1> 
+      <%= album.name %>
+    </h1>
+    <% album.pictures.each do |picture| %>
+      <header>
+        <h3>
+          <%= picture.name %>
+        </h3>
+      </header>
+      <div class="videos row">
+        <%= image_tag(picture.small_thumb.url) %>
+      </div>
+    <% end %>
+  <% end %>
+</article>

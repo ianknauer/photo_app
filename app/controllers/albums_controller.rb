@@ -12,11 +12,14 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
-      flash[:notice] = "Album Created!"
-      redirect_to albums_path
+     params[:pictures]['small_thumb'].each do |a|
+      @picture = @album.pictures.create!(:small_thumb => a, :album_id => @album.id)
+      end
+      redirect_to pictures_path
     else
       render :new
     end
+
   end
 
   private
