@@ -1,0 +1,10 @@
+<div class="well">
+  <%= form_for @picture do |f| %>
+    <div class="control-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.file_field :small_thumb %>
+    </div>
+    <%= f.submit 'Create Picture', class: 'btn btn-primary' %>
+  <% end %>
+</div>

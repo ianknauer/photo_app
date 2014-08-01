@@ -1,4 +1,8 @@
 class PicturesController < ApplicationController
+
+  def index
+    @pictures = Picture.all
+  end
   
   def new
     @picture = Picture.new
@@ -17,6 +21,6 @@ class PicturesController < ApplicationController
   private
 
   def pic_params
-    params.require(:picture).permit(:name, :small_thumb, :large_thumb)
+    params.require(:picture).permit(:name, :small_thumb)
   end
 end
