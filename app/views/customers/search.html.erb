@@ -1,0 +1,33 @@
+<section>
+  <% @customers.each do |customer| %>
+    <div class="row customer">
+      <%= link_to customer.slug do %>
+        <div class="col-md-3">
+          <%= image_tag(customer.profile_image, class: "img-thumbnail") %>
+        </div>
+        <div class="col-md-6 mid-info">
+          <div class="top row">
+            <span class="info-left">Name</span>
+            <span class="info-right"><%= customer.name %></span>
+          </div>
+          <div class="bottom row">
+            <span class="info-left">Email</span>
+            <span class="info-right"><%= customer.email %></span>
+          </div>
+        </div>
+        <div class="col-md-3 right-info">
+           <div class="top row default">
+            <span class="status-left"><%= customer.orders %></span>
+            <span class="status-right">Orders</span>
+          </div>
+        </div>
+      <% end %>
+    </div>  
+  <% end %>
+  <div class="row not-found">
+    <p> Did nobody show up? or are you not finding the person you're looking for? If they're not listed they probably don't exist yet!</p>
+    <%= link_to new_customer_path do %>
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Create a new customer</button>
+    <% end %>
+  </div>
+<section>

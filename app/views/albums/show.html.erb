@@ -1,0 +1,12 @@
+<article class="video_category">
+  <% @album.pictures.each do |picture| %>
+  <header>
+    <h3>
+      <%= picture.name %>
+    </h3>
+  </header>
+  <div class="videos row">
+    <%= image_tag(picture.small_thumb.url) %>
+  </div>
+<% end %>
+</article>

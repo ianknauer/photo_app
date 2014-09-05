@@ -1,0 +1,114 @@
+.customer {
+  margin: 0 auto;
+  width: 960px;
+  border-top: 1px dashed #e2e2e2;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.center {
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 960px;
+}
+
+h1 {
+  display: inline-block;
+}
+
+.edit {
+  margin-top: -15px;
+  margin-left: 15px;
+}
+
+.album {
+  margin: 0 auto;
+  width: 960px;
+  border-top: 1px dashed #e2e2e2;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.show {
+  margin-left: 10px;
+}
+
+.not-found {
+  margin: 0 auto;
+  width: 960px;
+  border-top: 1px dashed #e2e2e2;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.customer:hover {
+    background-color: rgba(75,137,194,0.1);
+}
+
+.info-left {
+  text-align: right;
+  font-weight: 900;
+  font-size: 0.9em;
+  color: #bababa;
+}
+
+.info-right {
+  text-align: left;
+  font-size: 0.9em;
+  padding-left: 15px;
+}
+
+.top.row.default {
+  margin-bottom: 10px;
+}
+
+.right-info > .top, .right-info > .bottom {
+  width: 160px;
+  margin: 0 auto;
+}
+
+.right-info > .top {
+  margin-top: 50px;
+}
+
+.status-left {
+  text-align: right;
+  font-weight: 900;
+  font-size: 0.9em;
+  padding: 3px 10px 3px 10px;
+  color: #fff;
+}
+
+.default > span.status-left {
+  background-color: #2ba6cb!important;
+}
+
+.success > span.status-left {
+  background-color: #2ba925!important;
+}
+
+.status-right {
+  text-align: left;
+  font-size: 0.9em;
+  padding-left: 15px;
+}
+
+.mid-info {
+  margin-top: 15px;
+  border-right: 1px solid #e2e2e2;
+  .row {
+    margin: 0 auto;
+    width: 200px;
+  }
+  .top {
+    padding-top: 30px;
+    margin-top: 15px;
+  }
+  .bottom {
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+  }
+}

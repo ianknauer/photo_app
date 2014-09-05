@@ -1,0 +1,19 @@
+<div class="forms">
+  <%= form_for @customer do |c| %>
+    <div class="control-group well">
+      <div class="col-sm-12 field">
+        <%= c.label :name %>
+        <%= c.text_field :name %>
+      </div>
+      <div class="col-sm-12 field">
+        <%= c.label :email %>
+        <%= c.text_field :email %>
+      </div>
+      <div class="col-sm-12 field">
+        <%= c.label :phone %>
+        <%= c.text_field :phone %>
+      </div>
+    <%= c.submit @customer.new_record? ? 'Create a new Customer' : 'Update Customer', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

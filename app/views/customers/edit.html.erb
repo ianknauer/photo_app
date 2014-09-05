@@ -1,0 +1,23 @@
+<section class="error-layout">
+  <%= render 'shared/errors', obj: @customer %>
+</section>
+<div class="center">
+<section>
+  <div class="row center">
+    <h1><%= @customer.name %></h1>
+    <div class="bottom row show">
+      <span class="info-left">Email</span>
+      <span class="info-right"><%= @customer.email %></span>
+    </div>
+    <div class="bottom row show">
+      <span class="info-left">Phone</span>
+      <span class="info-right"><%= @customer.phone %></span>
+    </div>
+  </div>
+</section>
+<br/>
+<br/>
+<p> To change the contact information for this customer make the modifications in the field below.</p>
+<hr/>
+<%= render 'form' %>
+</div>
