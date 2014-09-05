@@ -1,0 +1,49 @@
+<section>
+  <div class="row new">
+    <div class="col-md-1">
+      <%= link_to new_customer_path do %>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> New</button>
+      <% end %>
+    </div>
+    <%= form_tag search_customers_path, class: "col-md-6" do %>
+    <div class="col-md-8">
+      <div class="input-group">
+        <input name="search_term" type="text" class="form-control" placeholder="Search for customers here!">
+      </div>
+    </div>
+    <div class="col-md-3 pull-right">
+      <p>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</section>
+
+<section>
+  <% @customers.each do |customer| %>
+        <div class="row customer">
+          <%= link_to fix_url(customer.slug) do %>
+          <div class="col-md-3">
+            <%= image_tag(customer.profile_image, class: "img-thumbnail") %>
+          </div>
+          <div class="col-md-6 mid-info">
+            <div class="top row">
+              <span class="info-left">Name</span>
+              <span class="info-right"><%= customer.name %></span>
+            </div>
+            <div class="bottom row">
+              <span class="info-left">Email</span>
+              <span class="info-right"><%= customer.email %></span>
+            </div>
+          </div>
+          <div class="col-md-3 right-info">
+             <div class="top row default">
+              <span class="status-left"><%= customer.orders %></span>
+              <span class="status-right">Orders</span>
+            </div>
+          </div>
+        <% end %>
+        </div>  
+  <% end %>
+<section>

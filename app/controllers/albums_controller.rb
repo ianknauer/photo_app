@@ -1,10 +1,10 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Album.all
+    @albums = Customer.find_by(slug: params[:customer_id]).albums
   end
 
-  def new 
+  def new
     @album = Album.new
     @album.pictures.build
   end
@@ -12,14 +12,17 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
-     params[:pictures]['small_thumb'].each do |a|
-      @picture = @album.pictures.create!(:small_thumb => a, :album_id => @album.id)
+      params[:pictures]['small_thumb'].each do |a|
+        @picture = @album.pictures.create!(:small_thumb => a, :album_id => @album.id, :name => "image")
       end
-      redirect_to pictures_path
+      redirect_to root
     else
       render :new
     end
+  end
 
+  def show
+    @album = Album.find_by_id(params[:id])
   end
 
   private

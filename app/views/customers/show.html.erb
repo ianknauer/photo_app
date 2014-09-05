@@ -1,0 +1,32 @@
+<section>
+  <div class="row center">
+    <h1><%= @customer.name %></h1>
+     <%= link_to edit_customer_path(@customer) do %>
+        <button type="button" class="btn btn-primary edit"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+      <% end %>
+    <div class="bottom row show">
+      <span class="info-left">Email</span>
+      <span class="info-right"><%= @customer.email %></span>
+    </div>
+    <div class="bottom row show">
+      <span class="info-left">Phone</span>
+      <span class="info-right"><%= @customer.phone %></span>
+    </div>
+  </div>
+</section>
+<section>
+  <% @customer.albums.each do |album| %>
+    <div class="album">
+      <header>
+        <h3>
+          <%= album.name %>
+        </h3>
+      </header>
+      <% album.pictures.each do |picture| %>
+        <div class="videos row">
+          <%= image_tag(picture.small_thumb.url) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<section>

@@ -1,0 +1,56 @@
+.well {
+  min-height: 200px;
+}
+
+.forms {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.control-group {
+  width: 300px;
+  input {
+    float: right;
+  }
+  .field {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .field_with_errors { 
+    display: inline; 
+  }
+
+  .btn {
+    margin-top: 20px;
+    float: left;
+    margin-left:35px;
+  }
+}
+
+.alert {
+  .inner-text {
+    width: 960px;
+    margin: 0 auto;
+    padding-left: 30px;
+  }
+  button {
+    padding-top: 5px;
+  }
+  h5 {
+    font-weight: 900;
+    display: inline-block;
+    width: 220px;
+  }
+  ul {
+    list-style: none;
+    display: inline-block;
+  }
+  li {
+    display: inline-block;
+    width: 160px;
+  }
+}

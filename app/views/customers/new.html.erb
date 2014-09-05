@@ -1,0 +1,9 @@
+<section class="error-layout">
+  <%= render 'shared/errors', obj: @customer %>
+</section>
+<div class="center">
+<p>
+  You're about to create a new customer. If you aren't sure whether the customer you're about to create is new, please go back to the <%= link_to "Customers page", customers_path %> and search for their email address. All three fields are required, and the name and Email address have to be unique!
+</p>
+<%= render 'form' %>
+</div>

@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(pic_params)
     if @picture.save
       flash[:notice] = "Picture Saved Yo!"
-      redirect_to root_path
+      redirect_to pictures_path
     else
       render :new
     end
