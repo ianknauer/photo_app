@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'sessions#new'
   get '/sign_out', to: 'sessions#destroy'
   patch '/customers/:id', to: 'customers#update'
+  get '/customers/:slug/albums/new', to: 'albums#new'
+  
 
   resources :users, only: [:create, :show, :new]
   resources :sessions, only: [:create, :new, :destroy, :show]
@@ -17,4 +19,5 @@ Rails.application.routes.draw do
     end
   end
   resources :pictures, only: [:create, :new, :show, :index]
+
 end
