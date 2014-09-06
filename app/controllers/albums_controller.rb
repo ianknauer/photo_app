@@ -1,41 +1,37 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Customer.find_by(slug: params[:customer_id]).albums
   end
 
   def new
+    @customer = Customer.find_by(slug: params[:slug])
     @album = Album.new
     @album.pictures.build
   end
 
   def create
-    @album = Album.new(album_params)
+    @album = Album.new(merge_album_and_customer)
     if @album.save
       params[:pictures]['small_thumb'].each do |a|
         @picture = @album.pictures.create!(:small_thumb => a, :album_id => @album.id, :name => "image")
       end
-      redirect_to root
+      redirect_to home_path
     else
       render :new
     end
   end
 
   def show
-    @album = Album.find_by_id(params[:id])
+    @album = Album.find_by slug: params[:id]
   end
 
   private
 
   def album_params
-    params.require(:album).permit(:name, pictures_attributes:[:name, :small_thumb])
+    params.require(:album).permit(:customer_id, :name, pictures_attributes:[:small_thumb])
   end
 
-
-
-
-
-
-
-
+  def merge_album_and_customer
+    album_params.merge!(customer_id: (Customer.find_by(slug: params[:customer_id]).id))
+  end
 end

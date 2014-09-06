@@ -1,8 +1,11 @@
 <section>
   <div class="row center">
     <h1><%= @customer.name %></h1>
+     <%= link_to new_customer_album_path(@customer) do %>
+        <button type="button" class="btn btn-primary edit"><span class="glyphicon glyphicon-folder-open"></span>  New Album</button>
+     <% end %>
      <%= link_to edit_customer_path(@customer) do %>
-        <button type="button" class="btn btn-primary edit"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+        <button type="button" class="btn btn-default edit"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
       <% end %>
     <div class="bottom row show">
       <span class="info-left">Email</span>
@@ -19,14 +22,16 @@
     <div class="album">
       <header>
         <h3>
-          <%= album.name %>
+          <%= link_to customer_album_path(@customer, album) do %>
+            <%= album.name %>
+          <% end %>
         </h3>
       </header>
-      <% album.pictures.each do |picture| %>
-        <div class="videos row">
+      <div class="albums row">
+        <% album.previews.each do |picture| %>
           <%= image_tag(picture.small_thumb.url) %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <section>
