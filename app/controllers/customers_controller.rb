@@ -18,7 +18,6 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
-    @customer.albums.build
   end
 
   def search
