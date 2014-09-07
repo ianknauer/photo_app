@@ -41,7 +41,7 @@ class CustomersController < ApplicationController
   end
 
   def set_customer
-     @customer = Customer.find_by(slug: params[:id])
+     @customer = Customer.find_by slug: params[:id]
   end  
 
 end

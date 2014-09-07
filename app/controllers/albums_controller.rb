@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @customer = Customer.find_by(email: "ian.knauer@gmail.com")
+    @customer = Customer.find_by(slug: params[:customer_id])
     @album = Album.new
     @album.pictures.build
   end
