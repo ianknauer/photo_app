@@ -15,7 +15,6 @@ gem 'mini_magick'
 
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -23,7 +22,6 @@ group :development do
   gem 'spring'
   gem 'pry'
   gem 'better_errors'
-  gem 'sqlite3'
 end
 
 group :test do

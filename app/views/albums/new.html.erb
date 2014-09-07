@@ -2,20 +2,5 @@
   <h1>New Album</h1>
   <p>You're about to create a new album. You need to add a unique album name <em>(ex. Graduation Photos)</em> and then choose the pictures you want with the choose files button.
   </p>
-  <div class="forms">
-    <%= form_for [@customer, @album] do |f| %>
-      <div class="control-group new-album well">
-        <div class="col-sm-12 field">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
-        <div class="col-sm-12 files field">
-          <%= f.fields_for :pictures do |form| %>
-            <%= form.file_field :small_thumb, :multiple => true, name: "pictures[small_thumb][]"%>
-          <% end %>
-        </div>
-        <%= f.submit 'Create Album', class: 'btn btn-primary create-album' %>
-      </div>
-    <% end %>
-  </div>
+  
 </div>
