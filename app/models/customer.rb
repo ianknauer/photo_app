@@ -21,10 +21,14 @@ class Customer < ActiveRecord::Base
   end
 
   def profile_image
-    if self.albums.present? 
-      self.albums.first.pictures.first.small_thumb
+    if self.albums.present?
+      if self.albums.first.pictures.first.small_thumb.present?
+        self.albums.first.pictures.first.small_thumb
+      else
+        "http://ianknauer.net/No-image-provided.gif"
+      end
     else
-      "../No-image-provided.gif"
+      "http://ianknauer.net/No-image-provided.gif"
     end
   end
 

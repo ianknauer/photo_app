@@ -36,3 +36,5 @@ group :test, :development do
   gem 'faker'
   gem 'sqlite3'
 end
+
+ruby "2.0.0"
