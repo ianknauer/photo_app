@@ -8,8 +8,6 @@
         <div class="col-sm-12 field">
           <%= f.label :name %>
           <%= f.text_field :name %>
-        </div>
-        <div class="col-sm-12 files field">
           <%= f.fields_for :pictures do |form| %>
             <%= form.file_field :small_thumb, :multiple => true, name: "pictures[small_thumb][]"%>
           <% end %>
