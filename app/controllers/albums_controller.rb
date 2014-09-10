@@ -32,6 +32,6 @@ s
   end
 
   def merge_album_and_customer
-    album_params.merge!(customer_id: (Customer.first).id))
+    album_params.merge!(customer_id: (Customer.first).id)
   end
 end
