@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @customer = Customer.find_by(slug: params[:customer_id])
+    @customer = Customer.find_by(slug: params[:id])
     @album = Album.new
     @album.pictures.build
   end
@@ -31,6 +31,6 @@ class AlbumsController < ApplicationController
   end
 
   def merge_album_and_customer
-    album_params.merge!(customer_id: (Customer.first).id)
+    album_params.merge!(customer_id: (Customer.find_by(slug: params[:id]).id))
   end
 end

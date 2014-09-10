@@ -9,7 +9,7 @@
           <%= f.label :name %>
           <%= f.text_field :name %>
         </div>
-        <div class="col-sm-12 field">
+        <div class="col-sm-12 field files">
           <%= f.fields_for :pictures, Picture.new do |form| %>
             <%= form.file_field :small_thumb, :multiple => true, name: "pictures[small_thumb][]" %>
           <% end %>

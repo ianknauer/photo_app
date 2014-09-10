@@ -1,5 +1,4 @@
 class Customer < ActiveRecord::Base
-  belongs_to :user
   has_many :albums
 
   before_save :generate_slug
