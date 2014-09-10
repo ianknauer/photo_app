@@ -32,6 +32,6 @@ class AlbumsController < ApplicationController
   end
 
   def merge_album_and_customer
-    album_params.merge!(customer_id: (Customer.find_by(slug: params[:customer_id]).id))
+    album_params.merge!(customer_id: (Customer.find_by(slug: params[:id]).id))
   end
 end
