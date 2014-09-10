@@ -8,8 +8,10 @@
         <div class="col-sm-12 field">
           <%= f.label :name %>
           <%= f.text_field :name %>
-          <%= f.fields_for :pictures do |form| %>
-            <%= form.file_field :small_thumb, :multiple => true, name: "pictures[small_thumb][]"%>
+        </div>
+        <div class="col-sm-12 field">
+          <%= f.fields_for :pictures, Picture.new do |form| %>
+            <%= form.file_field :small_thumb, :multiple => true, name: "pictures[small_thumb][]" %>
           <% end %>
         </div>
         <%= f.submit 'Create Album', class: 'btn btn-primary create-album' %>
