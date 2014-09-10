@@ -3,7 +3,7 @@
   <p>You're about to create a new album. You need to add a unique album name <em>(ex. Graduation Photos)</em> and then choose the pictures you want with the choose files button.
   </p>
   <div class="forms">
-    <%= form_for([@customer, @album], url: new_customer_album_path) do |f| %>
+    <%= form_for(@album, url: new_customer_album_path) do |f| %>
       <div class="control-group new-album well">
         <div class="col-sm-12 field">
           <%= f.label :name %>
