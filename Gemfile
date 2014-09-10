@@ -13,12 +13,6 @@ gem 'bcrypt-ruby'
 gem 'carrierwave'
 gem 'mini_magick'
 
-
-group :production do
-  gem 'rails_12factor'
-  gem 'pg'
-end
-
 group :development do
   gem 'spring'
   gem 'pry'
@@ -34,6 +28,10 @@ group :test, :development do
   gem 'fabrication'
   gem 'faker'
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 ruby "2.0.0"
