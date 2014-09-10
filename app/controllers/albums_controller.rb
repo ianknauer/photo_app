@@ -20,7 +20,6 @@ class AlbumsController < ApplicationController
       render :new
     end
   end
-s
   def show
     @album = Album.find_by slug: params[:id]
   end
