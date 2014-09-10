@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @customer = Customer.find_by(slug: params[:customer_id])
+    @customer = Customer.find_by(slug: params[:id])
     @album = Album.new
     @album.pictures.build
   end
@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
       params[:pictures]['small_thumb'].each do |a|
         @picture = @album.pictures.create!(:small_thumb => a, :album_id => @album.id, :name => "image")
       end
-      redirect_to home_path
+      redirect_to customers_path
     else
       render :new
     end
