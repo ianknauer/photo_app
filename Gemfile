@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt-ruby'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 group :development do
   gem 'spring'
