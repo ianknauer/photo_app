@@ -3,8 +3,8 @@ CarrierWave.configure do |config|
     config.storage = :fog
     config.fog_credentials = {
       :provider               => 'AWS',                        # required
-      :aws_access_key_id      => 'ENV[S3_KEY]',                # required
-      :aws_secret_access_key  => 'ENV[S3_SECRET]',             # required
+      :aws_access_key_id      => 'AKIAINVANZB2ALQRR2F',                # required
+      :aws_secret_access_key  => 'qYJkoJimYJwHJ6B1mHMEYRA9KP9X7a0djYxUY5Ev',             # required
     }
     config.fog_directory  = 'iank-photo-app'                # required
   else
