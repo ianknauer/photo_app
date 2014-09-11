@@ -1,12 +1,15 @@
 CarrierWave.configure do |config|
   if Rails.env.staging? || Rails.env.production?
-    config.storage = :fog
-    config.fog_credentials = {
-      :provider               => 'AWS',                        # required
-      :aws_access_key_id      => 'ENV[S3_KEY]',                # required
-      :aws_secret_access_key  => 'ENV[S3_SECRET]',             # required
+    config.storage    = :aws
+    config.aws_bucket = ENV.fetch('iank-photo-app')
+    config.aws_acl    = :public_read
+    config.asset_host = 'http://example.com'
+    config.aws_authenticated_url_expiration = 60 * 60 * 24 * 365
+
+    config.aws_credentials = {
+      access_key_id:     ENV.fetch('ENV[S3_KEY'),
+      secret_access_key: ENV.fetch('ENV[S3_SECRET]')
     }
-    config.fog_directory  = 'iank-photo-app'                # required
   else
     config.storage = :file
     config.enable_processing = Rails.env.development?
