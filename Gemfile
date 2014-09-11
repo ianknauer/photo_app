@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt-ruby'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
+
 
 group :development do
   gem 'spring'
@@ -33,7 +35,6 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
-  gem 'carrierwave-aws'
 end
 
 ruby "2.0.0"
