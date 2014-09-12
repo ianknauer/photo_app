@@ -1,10 +1,22 @@
+#file-list {
+  margin-left: -30px;
+  li {
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+  }
+}
+
 .files > input {
   padding-top: 10px;
+  padding-left: 50px;
   float: left!important;
 }
 
 .create-album {
   margin-left: 55px!important;
+  margin-top: 0px!important;
 }
 
 .well {
@@ -40,6 +52,18 @@
   }
 }
 
+.album-forms {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 10px;
+
+  .control-group {
+    width: 100%;
+    display: block;
+    height: 100px;
+  }
+}
+
 .alert {
   .inner-text {
     width: 960px;
@@ -61,5 +85,13 @@
   li {
     display: inline-block;
     width: 160px;
+  }
+}
+
+#file-list {
+  list-style: none;
+  
+  li > img {
+    width: 175px;
   }
 }

@@ -12,12 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt-ruby'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
-
-group :production do
-  gem 'rails_12factor'
-  gem 'pg'
-end
 
 group :development do
   gem 'spring'
@@ -34,6 +30,11 @@ group :test, :development do
   gem 'fabrication'
   gem 'faker'
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 ruby "2.0.0"
